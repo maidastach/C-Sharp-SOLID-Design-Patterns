@@ -1,38 +1,27 @@
-﻿namespace SingleResponsibilityPrinciple
+﻿using SingleResponsibilityPrinciple.Person_;
+
+namespace SingleResponsibilityPrinciple
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to my application");
+            StandardMessages.WelcomeMessage();
 
             // Ask for user information
-            Person user = new Person();
-
-            Console.Write("What is your first name: ");
-            user.FirstName = Console.ReadLine();
-
-            Console.Write("What is your last name: ");
-            user.LastName = Console.ReadLine();
+            Person user = PersonFetcherData.FetchData();
 
             // Checks to be sure the first and last name are valid
-            if (string.IsNullOrWhiteSpace(user.FirstName))
+            bool isUserValid = PersonValidation.Validate(user);
+            if (isUserValid == false)
             {
-                Console.WriteLine("You did not give us a valid first name!");
-                Console.ReadLine();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(user.LastName))
-            {
-                Console.WriteLine("You did not give us a valid last name!");
-                Console.ReadLine();
+                StandardMessages.EndApplication();
                 return;
             }
 
             // Create a username for the user
-            Console.WriteLine($"Your username is {user.FirstName.Substring(0, 1)}{user.LastName}");
-            Console.ReadLine();
+            AccountGenerator.Generate(user);
+            StandardMessages.EndApplication();
         }
     }
 }

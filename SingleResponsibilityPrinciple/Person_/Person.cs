@@ -1,4 +1,4 @@
-﻿namespace SingleResponsibilityPrinciple
+﻿namespace SingleResponsibilityPrinciple.Person_
 {
     internal class Person
     {
