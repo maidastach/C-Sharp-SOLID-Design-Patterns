@@ -1,14 +1,14 @@
-﻿namespace InterfaceSegregationPrinciple
+﻿namespace InterfaceSegregationPrinciple.Book_
 {
-    internal class DVD : IBorrowableDVD
+    internal class Book : IBorrowableBook
     {
         public string LibraryId { get; set; }
         public string Title { get; set; }
-        public List<string> Actors { get; set; }
+        public string Author { get; set; }
+        public int Pages { get; set; }
         public int CheckOutDurationInDays { get; set; } = 14;
         public string Borrower { get; set; }
         public DateTime BorrowerDate { get; set; }
-        public int RuntimeInMinutes { get; set; }
 
         public void CheckOut(string borrower)
         {

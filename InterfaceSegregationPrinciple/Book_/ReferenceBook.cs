@@ -1,4 +1,4 @@
-﻿namespace InterfaceSegregationPrinciple
+﻿namespace InterfaceSegregationPrinciple.Book_
 {
     internal class ReferenceBook : IBook
     {

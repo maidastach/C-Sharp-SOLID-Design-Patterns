@@ -1,4 +1,4 @@
-﻿namespace InterfaceSegregationPrinciple
+﻿namespace InterfaceSegregationPrinciple.GeneralInterfaces
 {
     internal interface IBorrowable
     {

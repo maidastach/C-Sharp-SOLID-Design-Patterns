@@ -1,10 +1,10 @@
-﻿namespace InterfaceSegregationPrinciple
+﻿namespace InterfaceSegregationPrinciple.DVD_
 {
-    internal class AudioBook : IBorrowableAudioBook
+    internal class DVD : IBorrowableDVD
     {
         public string LibraryId { get; set; }
         public string Title { get; set; }
-        public string Author { get; set; }
+        public List<string> Actors { get; set; }
         public int CheckOutDurationInDays { get; set; } = 14;
         public string Borrower { get; set; }
         public DateTime BorrowerDate { get; set; }

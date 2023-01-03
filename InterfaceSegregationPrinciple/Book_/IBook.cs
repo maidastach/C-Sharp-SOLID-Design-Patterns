@@ -1,4 +1,6 @@
-﻿namespace InterfaceSegregationPrinciple
+﻿using InterfaceSegregationPrinciple.GeneralInterfaces;
+
+namespace InterfaceSegregationPrinciple.Book_
 {
     internal interface IBook : ILibraryItem
     {

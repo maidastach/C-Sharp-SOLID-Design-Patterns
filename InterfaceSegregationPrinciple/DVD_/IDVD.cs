@@ -1,4 +1,6 @@
-﻿namespace InterfaceSegregationPrinciple
+﻿using InterfaceSegregationPrinciple.GeneralInterfaces;
+
+namespace InterfaceSegregationPrinciple.DVD_
 {
     internal interface IDVD : ILibraryItem
     {
