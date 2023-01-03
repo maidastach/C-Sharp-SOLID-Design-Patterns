@@ -1,4 +1,32 @@
-﻿namespace OpenClosedPrinciple
+﻿/*
+            *** OPEN CLOSED PRINCIPLE ***
+ * A Class should be OPEN for extensions but CLOSED for modifications
+ * 
+ * In this simple application i am creating a list of applicants
+ * fetching their first and last names (PersonModel)
+ * then through the accountProcessor i register each of the applicants
+ * as employee (EmployeeModel) and create an email address for them
+ * 
+ * Let's suppose that this app is in production, and a new scenario 
+ * comes up, like we should be able to identify if an employee 
+ * is a Manager or an Executive. We should not change the Accounts 
+ * processor because it works, we would rather extend it through Interfaces.
+ * 
+ * We start extending the EmployeeModel adding IsManager 
+ * and IsExecutive props defaulted on false
+ * and extending the PersonModel by initialising an AccountProcessor into it
+ * 
+ * We then create 2 Model and 2 AccountProcessor 
+ * one for Manager and one for Executive
+ * Each of the Model and AccountProcessor will have 
+ * the respective default instance
+ * 
+ * In this way we have opened our application for extensions to any other
+ * role/position which an employee may have
+ * 
+ */
+
+namespace OpenClosedPrinciple
 {
     class Program
     {
