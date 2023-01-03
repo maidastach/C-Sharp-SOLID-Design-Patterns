@@ -1,6 +1,6 @@
-﻿namespace DependencyInversionPrinciple
+﻿namespace DependencyInversionPrinciple.Person_
 {
-    internal class Person
+    internal class Person : IPerson
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
