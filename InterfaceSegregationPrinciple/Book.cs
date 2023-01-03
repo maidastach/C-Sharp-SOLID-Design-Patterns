@@ -1,6 +1,6 @@
 ﻿namespace InterfaceSegregationPrinciple
 {
-    internal class Book : ILibraryItem
+    internal class Book : IBorrowableBook
     {
         public string LibraryId { get; set; }
         public string Title { get; set; }
