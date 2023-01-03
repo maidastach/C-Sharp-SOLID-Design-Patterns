@@ -1,31 +1,31 @@
-﻿namespace OpenClosedPrinciple
+﻿using OpenClosedPrinciple.Applicants;
+
+namespace OpenClosedPrinciple
 {
     class Program
     {
         static void Main(string[] args)
         {
-            List<PersonModel> applicants = new List<PersonModel>
+            List<IApplicantModel> applicants = new List<IApplicantModel>
             {
                 new PersonModel { FirstName = "Salvatore", LastName= "De Rosa" },
-                new PersonModel { FirstName = "Giovanni", LastName= "Esposito" },
-                new PersonModel { FirstName = "Marek", LastName= "Hamsik" },
+                new ManagerModel { FirstName = "Giovanni", LastName= "Esposito" },
+                new ExecutiveModel { FirstName = "Marek", LastName= "Hamsik" },
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
-            Accounts accountProcessor = new Accounts();
 
             foreach (var applicant in applicants)
             {
-                employees.Add(accountProcessor.Create(applicant));
+                employees.Add(applicant.AccountProcessor.Create(applicant));
             }
 
             foreach (var emp in employees)
             {
-                Console.WriteLine($"{emp.FirstName} {emp.LastName}: {emp.Email}");
+                Console.WriteLine($"{emp.FirstName} {emp.LastName}: {emp.Email} isManager: {emp.IsManager} isExecutive: {emp.IsExecutive}");
             }
 
             Console.ReadLine();
-
         }
     }
 }
