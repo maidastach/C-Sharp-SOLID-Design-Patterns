@@ -1,22 +1,16 @@
 ﻿namespace LiskovSubstitutionPrinciple
 {
-    internal class CEO : Employee
+    internal class CEO : BaseEmployee, IManager
     {
         public override void CalculatePerHourRate(int rank)
         {
             decimal baseAmount = 150M;
             Salary = baseAmount * rank;
         }
-        public override void AssignManager(Employee manager)
-        {
-            throw new InvalidOperationException("The CEO has no manager.");
-        }
-
         public void GeneratePerformanceReview()
         {
             Console.WriteLine("I'm reviewing a direct report's performance.");
         }
-
         public void FireSomeone()
         {
             Console.WriteLine("You are Fired!");

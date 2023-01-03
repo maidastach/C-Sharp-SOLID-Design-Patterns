@@ -1,6 +1,6 @@
 ﻿namespace LiskovSubstitutionPrinciple
 {
-    internal class Manager : Employee
+    internal class Manager : Employee, IManager
     {
         public override void CalculatePerHourRate(int rank)
         {
