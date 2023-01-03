@@ -1,4 +1,21 @@
-﻿namespace SingleResponsibilityPrinciple
+﻿/*
+            *** SINGLE RESPONSIBILITY PRINCIPLE ***
+ * A Class should have ONE responsibility or ONE reason to change
+ * 
+ * In this example if i want to change the way i welcome users
+ * or the way i fetch their details i would break this rule.
+ * 
+ * Hence i break the following class into "sections"
+ * eache of which will have one responsibility (does one job)
+ * and in case it will have to change 
+ * it will be only for one reason
+ *
+ * We will have more classes however they can be
+ * organised into folders
+ *
+ */
+
+namespace SingleResponsibilityPrinciple
 {
     class Program
     {
